@@ -22,6 +22,16 @@ function App() {
         onChange={(event) => {
           setUserEnederedToDo(event.target.value)
         }}
+        onKeyDown={(event) => {
+          if(event.key === "Enter"){
+            setListItems([
+              ...listItems,
+              userEnteredToDo
+            ])
+  
+          setUserEnederedToDo("");
+          }
+        }}
         value={userEnteredToDo}
         />
         <button
@@ -31,7 +41,7 @@ function App() {
             userEnteredToDo
           ])
 
-setUserEnederedToDo("");
+        setUserEnederedToDo("");
         }}
         >Add</button>
     </div>
