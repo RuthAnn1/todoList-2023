@@ -1,7 +1,7 @@
 import React from 'react';
 import "./listItem.css";
 
-const listItem = (props) => {
+const ListItem = (props) => {
     const {item} = props;
     return(
         <>
@@ -12,4 +12,4 @@ const listItem = (props) => {
         </>
     )
 }
-export default listItem
+export default ListItem

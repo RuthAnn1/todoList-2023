@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
-import listItem from './listItem';
+import ListItem from './listItem';
+
 
 
 
@@ -24,7 +25,7 @@ function App() {
           //can do js here 
           listItems.map((item, index)=>{
             return (
-                <listItem
+                <ListItem
                   key={index}
                   item={item}
             
