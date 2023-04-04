@@ -4,9 +4,9 @@ import React from 'react';
 
 
 function App() {
-  const [userEnteredToDo, setUserEnederedToDo] = React.useState([]);
+  const [userEnteredToDo, setUserEnederedToDo] = React.useState("");
   const [listItems, setListItems] = React.useState([]);
-  console.log(userEnteredToDo)
+ 
 
   return (
     <div>
@@ -21,18 +21,19 @@ function App() {
      <input
         onChange={(event) => {
           setUserEnederedToDo(event.target.value)
-          console.log(event.target.value)
         }}
+        value={userEnteredToDo}
         />
         <button
         onClick={()=>{
-          console.log("here")
           setListItems([
             ...listItems,
             userEnteredToDo
           ])
 
-        }}>Add</button>
+setUserEnederedToDo("");
+        }}
+        >Add</button>
     </div>
   );
 }
