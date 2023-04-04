@@ -1,11 +1,20 @@
 import './App.css';
 import React from 'react';
+import listItem from './listItem';
 
 
 
 function App() {
   const [userEnteredToDo, setUserEnederedToDo] = React.useState("");
   const [listItems, setListItems] = React.useState([]);
+  const saveItemAnDClearInput = () =>{
+        setListItems([
+          ...listItems,
+          userEnteredToDo
+        ])
+
+      setUserEnederedToDo("");
+  }
  
 
   return (
@@ -14,7 +23,12 @@ function App() {
         {
           //can do js here 
           listItems.map((item, index)=>{
-            return (<li key = {index}>{item}</li>)
+            return (
+                <listItem
+                  key={index}
+                  item={item}
+            
+            />)
           })
         }
       </ul>
@@ -24,24 +38,14 @@ function App() {
         }}
         onKeyDown={(event) => {
           if(event.key === "Enter"){
-            setListItems([
-              ...listItems,
-              userEnteredToDo
-            ])
-  
-          setUserEnederedToDo("");
+            saveItemAnDClearInput()
           }
         }}
         value={userEnteredToDo}
         />
         <button
         onClick={()=>{
-          setListItems([
-            ...listItems,
-            userEnteredToDo
-          ])
-
-        setUserEnederedToDo("");
+          saveItemAnDClearInput()
         }}
         >Add</button>
     </div>
