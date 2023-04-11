@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import ListItem from './listItem';
+import Input from './Input'
 
 
 
@@ -28,12 +29,30 @@ function App() {
                 <ListItem
                   key={index}
                   item={item}
+                  index = {index}
+                  listItems = {listItems}
+                  setListItems = {setListItems}
             
             />)
           })
         }
       </ul>
-     <input
+    {/*<input
+        onChange={(event) => {
+          setUserEnederedToDo(event.target.value)
+        }}
+        onKeyDown={(event) => {
+          if(event.key === "Enter"){
+            saveItemAnDClearInput()
+          }
+        }}
+        value={userEnteredToDo}
+        />
+        <button
+        onClick={()=>{
+          saveItemAnDClearInput()
+        }}*/}
+        <Input 
         onChange={(event) => {
           setUserEnederedToDo(event.target.value)
         }}
@@ -48,6 +67,7 @@ function App() {
         onClick={()=>{
           saveItemAnDClearInput()
         }}
+
         >Add</button>
     </div>
   );
